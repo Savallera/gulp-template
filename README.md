@@ -10,6 +10,14 @@ npm init
 
 ```
 
+Запуск разработки
+
+`npm run start / gulp`
+
+Публикация GH-pages
+
+`npm run deploy`
+
 Форматирование
 
 `npm run fixAll`
