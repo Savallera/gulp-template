@@ -14,8 +14,8 @@
     "lintfix": "stylelint --fix **/*.css",
     "checkAll": "npm run check && npm run lint",
     "fixAll": "npm run format && npm run lintfix",
-    "deploy": "gh-pages -d dist",
     "start": "gulp",
+    "deploy": "gh-pages -d dist"
   },
   "babel": {
     "presets": [
