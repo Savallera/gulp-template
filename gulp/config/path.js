@@ -35,11 +35,29 @@ export default {
       pathSrc + '/images/*.*',
       pathSrc + '/images/**/*.*',
       '!' + pathSrc + '/images/icons/*.svg',
+      '!' + pathSrc + '/images/*.ico',
+      '!' + pathSrc + '/images/apple-touch-icon.png',
     ],
     watch: [
       pathSrc + '/images/*.*',
       pathSrc + '/images/**/*.*',
       '!' + pathSrc + '/images/icons/*.svg',
+      '!' + pathSrc + '/images/*.ico',
+      '!' + pathSrc + '/images/apple-touch-icon.png',
+    ],
+    dest: pathDest + '/images',
+  },
+
+  favicon: {
+    src: [
+      '!' + pathSrc + '/images/*.ico',
+      pathSrc + '/images/favicon.svg',
+      pathSrc + '/images/apple-touch-icon.png',
+    ],
+    watch: [
+      '!' + pathSrc + '/images/*.ico',
+      pathSrc + '/images/favicon.svg',
+      pathSrc + '/images/apple-touch-icon.png',
     ],
     dest: pathDest + '/images',
   },
