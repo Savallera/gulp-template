@@ -35,6 +35,7 @@ export default {
       pathSrc + '/images/*.*',
       pathSrc + '/images/**/*.*',
       '!' + pathSrc + '/images/icons/*.svg',
+      '!' + pathSrc + '/images/favicon.svg',
       '!' + pathSrc + '/images/*.ico',
       '!' + pathSrc + '/images/apple-touch-icon.png',
     ],
@@ -42,6 +43,7 @@ export default {
       pathSrc + '/images/*.*',
       pathSrc + '/images/**/*.*',
       '!' + pathSrc + '/images/icons/*.svg',
+      '!' + pathSrc + '/images/favicon.svg',
       '!' + pathSrc + '/images/*.ico',
       '!' + pathSrc + '/images/apple-touch-icon.png',
     ],
@@ -59,7 +61,7 @@ export default {
       pathSrc + '/images/favicon.svg',
       pathSrc + '/images/apple-touch-icon.png',
     ],
-    dest: pathDest + '/images',
+    dest: pathDest + '/images/favicon',
   },
 
   svgSprite: {
