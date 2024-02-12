@@ -16,7 +16,7 @@
   \******************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\nconsole.log('Hello worldy');\n\n\n//# sourceURL=webpack://gulp-template/./src/scripts/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nconsole.log('Hello worldy');\r\n\n\n//# sourceURL=webpack://gulp-template/./src/scripts/index.js?");
 
 /***/ })
 

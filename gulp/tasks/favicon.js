@@ -19,7 +19,7 @@ export default () => {
       })
     )
 
-    .pipe(gulp.src('./src/images/favicon.ico'))
+    .pipe(gulp.src('./src/images/favicon/favicon.ico'))
     .pipe(gulp.dest(path.favicon.dest))
 
     .pipe(gulp.src(path.favicon.src))

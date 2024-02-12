@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-inline-size: 320px;
   margin: 0;
@@ -11,7 +15,6 @@ body {
   font-size: 16px;
   color: var(--main-text-color);
   background-color: var(--main-bg-color, #f0f0f0);
-  scroll-behavior: smooth;
 }
 
 // h1,
@@ -41,4 +44,8 @@ a {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+}
+
+:focus {
+  outline: none;
 }

@@ -31,5 +31,9 @@ export default () => {
     .pipe(newer(path.images.dest))
     .pipe(imagemin())
 
+    .pipe(gulp.src(path.svg.src))
+    .pipe(newer(path.svg.dest))
+    .pipe(imagemin())
+
     .pipe(gulp.dest(path.images.dest));
 };

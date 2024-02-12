@@ -22,6 +22,10 @@ npm init
 
 `npm run fixAll`
 
+Запуск отдельных задач
+
+`gulp html, gulp clear, ...`
+
 ---
 
 **Пакеты для установки**

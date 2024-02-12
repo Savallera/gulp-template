@@ -10,7 +10,7 @@ export default {
     dest: pathDest,
   },
 
-  scss: {
+  styles: {
     src: pathSrc + '/styles/*.scss',
     watch: [
       pathSrc + '/styles/*.scss',
@@ -32,42 +32,42 @@ export default {
 
   images: {
     src: [
-      pathSrc + '/images/*.*',
-      pathSrc + '/images/**/*.*',
-      '!' + pathSrc + '/images/icons/*.svg',
-      '!' + pathSrc + '/images/favicon.svg',
-      '!' + pathSrc + '/images/*.ico',
-      '!' + pathSrc + '/images/apple-touch-icon.png',
+      pathSrc + '/images/*.{jpg,jpeg,png,gif}',
+      pathSrc + '/images/**/*.{jpg,jpeg,png,gif}',
+      '!' + pathSrc + '/images/favicon/*.*',
     ],
     watch: [
-      pathSrc + '/images/*.*',
-      pathSrc + '/images/**/*.*',
-      '!' + pathSrc + '/images/icons/*.svg',
-      '!' + pathSrc + '/images/favicon.svg',
-      '!' + pathSrc + '/images/*.ico',
-      '!' + pathSrc + '/images/apple-touch-icon.png',
+      pathSrc + '/images/*.{jpg,jpeg,png,gif}',
+      pathSrc + '/images/**/*.{jpg,jpeg,png,gif}',
+      '!' + pathSrc + '/images/favicon/*.*',
     ],
     dest: pathDest + '/images',
   },
 
-  favicon: {
+  svg: {
     src: [
-      '!' + pathSrc + '/images/*.ico',
-      pathSrc + '/images/favicon.svg',
-      pathSrc + '/images/apple-touch-icon.png',
+      pathSrc + '/images/*.svg',
+      pathSrc + '/images/**/*.svg',
+      '!' + pathSrc + '/images/icons/*.svg',
     ],
     watch: [
-      '!' + pathSrc + '/images/*.ico',
-      pathSrc + '/images/favicon.svg',
-      pathSrc + '/images/apple-touch-icon.png',
+      pathSrc + '/images/*.svg',
+      pathSrc + '/images/**/*.svg',
+      '!' + pathSrc + '/images/icons/*.svg',
     ],
-    dest: pathDest + '/images/favicon',
+    dest: pathDest + '/images',
   },
 
   svgSprite: {
     src: [pathSrc + '/images/icons/*.svg'],
     watch: [pathSrc + '/images/icons/*.svg'],
     dest: pathDest + '/images',
+  },
+
+  favicon: {
+    src: [pathSrc + '/images/favicon/*.*'],
+    watch: [pathSrc + '/images/favicon/*.*'],
+    dest: pathDest + '/images/favicon',
   },
 
   fonts: {
