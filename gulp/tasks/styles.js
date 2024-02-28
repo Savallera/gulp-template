@@ -6,10 +6,11 @@ import browserSync from 'browser-sync';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import concat from 'gulp-concat';
-import autoprefixer from 'gulp-autoprefixer';
-import csso from 'gulp-csso';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
 import rename from 'gulp-rename';
-import groupCssMediaQueries from 'gulp-group-css-media-queries';
+import mediaquery from 'postcss-combine-media-query';
 import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import cssImport from 'gulp-cssimport';
@@ -17,31 +18,22 @@ import cssImport from 'gulp-cssimport';
 const sass = gulpSass(dartSass);
 
 export default () => {
-  return (
-    gulp
-      .src(path.styles.src)
-      .pipe(
-        plumber({
-          errorHandler: notify.onError((error) => ({
-            title: 'styles',
-            message: error.message,
-          })),
-        })
-      )
-      .pipe(concat('styles.scss'))
-      .pipe(sass())
-      .pipe(cssImport())
-      .pipe(
-        autoprefixer({
-          overrideBrowserslist: ['last 10 versions'],
-          grid: true,
-        })
-      )
-      .pipe(groupCssMediaQueries())
-      // .pipe(gulp.dest(path.styles.dest))
-      .pipe(rename({ suffix: '.min' }))
-      .pipe(csso())
-      .pipe(gulp.dest(path.styles.dest))
-      .pipe(browserSync.stream())
-  );
+  const plugins = [autoprefixer(), mediaquery(), cssnano()];
+  return gulp
+    .src(path.styles.src)
+    .pipe(
+      plumber({
+        errorHandler: notify.onError((error) => ({
+          title: 'styles',
+          message: error.message,
+        })),
+      })
+    )
+    .pipe(concat('styles.scss'))
+    .pipe(sass())
+    .pipe(cssImport())
+    .pipe(postcss(plugins))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest(path.styles.dest))
+    .pipe(browserSync.stream());
 };
